@@ -4,6 +4,11 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
+    {
+        type: 'input',
+        name: 'projectName',
+        message: "What is the project name?",
+    },
     { 
         type: 'input',
         name: 'username',
@@ -19,6 +24,16 @@ const questions = [
         name: 'description',
         message: "Please write a short description of your project?",
     },
+    {
+        type: 'input',
+        name: 'instructions',
+        message: "Please advise on how to install the application."
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please advise on how to use the application?'
+    },
     { 
         type: 'input',
         name: 'license',
@@ -26,33 +41,30 @@ const questions = [
     },
     { 
         type: 'input',
-        name: 'dependencies',
-        message: "What command should be run to install dependencies?",
-    },
-    { 
-        type: 'input',
-        name: 'test',
-        message: "What command should be run to run tests?",
-    },
-    { 
-        type: 'input',
         name: 'feature',
-        message: "What does the user need to know about using the repo?",
+        message: "What features does the user need to know about using the repo?",
     },
     { 
         type: 'input',
         name: 'contribution',
         message: "What does the user need to know about contributing to the repo?",
     },
+    { 
+        type: 'input',
+        name: 'testing',
+        message: "What command should be run to run tests?",
+    },
 ];
 
-const userInputs = ["hello"];
+const userInputs = [];
 
 function inquireQuestion(questions) {
     inquirer
         .prompt(questions)
         .then((data) => {
             userInputs.push(data);
+            console.log(userInputs);
+            writeToFile('README.md', userInputs);
         }
         )
     
@@ -60,7 +72,7 @@ function inquireQuestion(questions) {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
+    fs.writeFile(fileName, generateMarkdown.generateMarkdown(data) , (err) => {
         
         err ? console.error(err) : console.log('Commit logged!');
     })
@@ -69,7 +81,6 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquireQuestion(questions);
-    writeToFile('README.md', userInputs);
     
 }
 
