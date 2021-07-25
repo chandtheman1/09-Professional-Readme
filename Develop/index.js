@@ -35,14 +35,10 @@ const questions = [
         message: 'Please advise on how to use the application?'
     },
     { 
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: "What kind of license should your project have?",
-    },
-    { 
-        type: 'input',
-        name: 'feature',
-        message: "What features does the user need to know about using the repo?",
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     { 
         type: 'input',

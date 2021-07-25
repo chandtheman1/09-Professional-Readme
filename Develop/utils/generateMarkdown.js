@@ -21,33 +21,28 @@ ${data[0].description}
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
-  - [Features](#features)
   - [How to Contribute](#how-to-contribute)
   - [Testing](#testing)
   - [Questions](#questions)
 
 ## Installation
-  What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+  
   ${data[0].instructions}
 
 ## Usage
-  Provide instructions and examples for use. Include screenshots as needed.
-  To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:      
+       
   ${data[0].usage}
 
 ## License
-  The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-  ${data[0].license}
   
-## Features
-  If your project has a lot of features, list them here.
-  ${data[0].feature}
+  ${data[0].license}
 
 ## How to Contribute
+
   ${data[0].contribution}
 
 ## Testing
-  Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+  
   ${data[0].testing}
 
 ## Questions
