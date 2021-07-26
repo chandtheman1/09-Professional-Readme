@@ -61,7 +61,6 @@ function inquireQuestion(questions) {
         .prompt(questions)
         .then((data) => {
             userInputs.push(data);
-            console.log(userInputs);
             writeToFile('README.md', userInputs);
         }
         )
